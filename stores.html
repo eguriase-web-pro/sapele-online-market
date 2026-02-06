@@ -1,30 +1,81 @@
-<section id="stores-container"></section>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SOM Stores</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<script>
-  fetch('products.json')
-    .then(response => response.json())
-    .then(data => {
-      const container = document.getElementById('stores-container');
+<header>
+  <h1>Sapele Online Market (SOM)</h1>
+  <p>Discover amazing products from local sellers in Sapele</p>
+</header>
 
-      data.stores.forEach(store => {
-        const section = document.createElement('section');
-        section.className = 'store';
-        section.id = store.id;
+<nav>
+  <a href="index.html">Home</a>
+  <a href="stores.html">Stores</a>
+</nav>
 
-        section.innerHTML = `<h2>${store.name}</h2>
-                             <p>Location: ${store.location}</p>`;
+<!-- Store 1 -->
+<section class="store"id="clothes">
+  <h2>Tom's Trending closet</h2>
+  <p>Location: osun</p>
 
-        store.products.forEach(product => {
-          const div = document.createElement('div');
-          div.className = 'product';
-          div.innerHTML = `<img src="${product.image}" alt="${product.name}">
-                           <h3>${product.name}</h3>
-                           <p>${product.price}</p>
-                           <a href="${product.contact}" target="_blank">Contact Seller</a>`;
-          section.appendChild(div);
-        });
+  <div class="product">
+    <img src="https://via.placeholder.com/150?text=Sneakers" alt="Men Sneakers">
+    <h3>Men Sneakers</h3>
+    <p>₦15,000</p>
+    <a href="https://wa.me/2349112425685" target="_blank">Contact Seller</a>
+  </div>
 
-        container.appendChild(section);
-      });
-    });
-</script>
+  <div class="product">
+    <img src="https://via.placeholder.com/150?text=Bag" alt="Women Bag">
+    <h3>Women Bag</h3>
+    <p>₦8,000</p>
+    <a href="https://wa.me/2349112425685" target="_blank">Contact Seller</a>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/150?text=T-Shirt" alt="T-Shirts">
+    <h3>T-Shirts</h3>
+    <p>₦5,000</p>
+    <a href="https://wa.me/2349112425685" target="_blank">Contact Seller</a>
+  </div>
+</section>
+
+<!-- Store 2 -->
+<section class="store"id="phones">
+  <h2>Patrick's Phone Hub</h2>
+  <p>Location: Sapele</p>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/150?text=Phone" alt="Smartphone">
+    <h3>Smartphone</h3>
+    <p>₦60,000</p>
+    <a href="https://wa.me/2348065308410" target="_blank">Contact Seller</a>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/150?text=Headphones" alt="Headphones">
+    <h3>Headphones</h3>
+    <p>₦12,000</p>
+    <a href="https://wa.me/2348065308410" target="_blank">Contact Seller</a>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/150?text=Charger" alt="Phone Charger">
+    <h3>Phone Charger</h3>
+    <p>₦3,500</p>
+    <a href="https://wa.me/2348065308410" target="_blank">Contact Seller</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Sapele Online Market</p>
+</footer>
+
+</body>
+</html>
+
+
+
