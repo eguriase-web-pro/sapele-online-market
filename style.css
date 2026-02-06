@@ -158,3 +158,22 @@ footer {
 .contact button:hover {
   background: #ff9800;
 }
+
+.product {
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.product:hover {
+  transform: scale(1.08); /* slightly bigger */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* bigger shadow */
+  background: #fff0e5; /* subtle color change */
+}
+
+.product a {
+  transition: background 0.3s, transform 0.3s;
+}
+
+.product a:hover {
+  background: #ff7043; /* slightly different button color */
+  transform: scale(1.05); /* slight zoom effect on button */
+}
