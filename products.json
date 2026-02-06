@@ -1,0 +1,42 @@
+{
+  "stores": [
+    {
+      "name": "Blessing Fashion Store",
+      "location": "Sapele",
+      "id": "clothes",
+      "products": [
+        {
+          "name": "Men Sneakers",
+          "price": "₦15,000",
+          "image": "https://via.placeholder.com/150?text=Sneakers",
+          "contact": "https://wa.me/234XXXXXXXXXX"
+        },
+        {
+          "name": "Women Bag",
+          "price": "₦8,000",
+          "image": "https://via.placeholder.com/150?text=Bag",
+          "contact": "https://wa.me/234XXXXXXXXXX"
+        }
+      ]
+    },
+    {
+      "name": "Oghenetega Phone Hub",
+      "location": "Sapele",
+      "id": "phones",
+      "products": [
+        {
+          "name": "Smartphone",
+          "price": "₦60,000",
+          "image": "https://via.placeholder.com/150?text=Phone",
+          "contact": "https://wa.me/234XXXXXXXXXX"
+        },
+        {
+          "name": "Headphones",
+          "price": "₦12,000",
+          "image": "https://via.placeholder.com/150?text=Headphones",
+          "contact": "https://wa.me/234XXXXXXXXXX"
+        }
+      ]
+    }
+  ]
+}
