@@ -98,9 +98,27 @@
 <footer>
   <p>© 2026 Sapele Online Market</p>
 </footer>
+<script>
+  const sections = document.querySelectorAll('section');
 
+  function showSections() {
+    const triggerBottom = window.innerHeight / 5 * 4;
+
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+
+      if(sectionTop < triggerBottom){
+        section.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', showSections);
+  window.addEventListener('load', showSections);
+</script>
 </body>
 </html>
+
 
 
 
