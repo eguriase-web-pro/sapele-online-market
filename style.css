@@ -88,3 +88,73 @@ footer {
   padding: 12px;
   margin-top: 30px;
 }
+
+
+.categories, .featured-products, .contact {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background: #fff3e0;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.categories h2, .featured-products h2, .contact h2 {
+  color: #ff5722;
+  text-align: center;
+}
+
+.category, .product {
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 10px;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.category img, .product img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.category:hover, .product:hover {
+  transform: scale(1.05);
+}
+
+.category p {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.contact input, .contact textarea {
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ff5722;
+}
+
+.contact button {
+  padding: 10px;
+  background: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact button:hover {
+  background: #ff9800;
+}
