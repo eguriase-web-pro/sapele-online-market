@@ -254,3 +254,11 @@ button:hover, .product a:hover, .carousel-item a:hover, .category a:hover {
   background: #fff0e5;
   border-radius: 10px;
 }
+
+.store {
+  background: #fff8e1; /* soft cream color */
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
