@@ -1,26 +1,7 @@
 {
   "stores": [
     {
-      "name": "Blessing Fashion Store",
-      "location": "Sapele",
-      "id": "clothes",
-      "products": [
-        {
-          "name": "Men Sneakers",
-          "price": "₦15,000",
-          "image": "https://via.placeholder.com/150?text=Sneakers",
-          "contact": "https://wa.me/234XXXXXXXXXX"
-        },
-        {
-          "name": "Women Bag",
-          "price": "₦8,000",
-          "image": "https://via.placeholder.com/150?text=Bag",
-          "contact": "https://wa.me/234XXXXXXXXXX"
-        }
-      ]
-    },
-    {
-      "name": "Oghenetega Phone Hub",
+      "name": "Patrick's Phone Hub",
       "location": "Sapele",
       "id": "phones",
       "products": [
@@ -28,13 +9,89 @@
           "name": "Smartphone",
           "price": "₦60,000",
           "image": "https://via.placeholder.com/150?text=Phone",
-          "contact": "https://wa.me/234XXXXXXXXXX"
+          "contact": "https://wa.me/2348065308410"
         },
         {
           "name": "Headphones",
           "price": "₦12,000",
           "image": "https://via.placeholder.com/150?text=Headphones",
-          "contact": "https://wa.me/234XXXXXXXXXX"
+          "contact": "https://wa.me/2348065308410"
+        }
+      ]
+    },
+    {
+      "name": "Tom's Trending Closet",
+      "location": "Sapele",
+      "id": "clothes",
+      "products": [
+        {
+          "name": "T-shirt",
+          "price": "₦3,500",
+          "image": "https://via.placeholder.com/150?text=T-shirt",
+          "contact": "https://wa.me/2349112425685"
+        },
+        {
+          "name": "Dress",
+          "price": "₦7,000",
+          "image": "https://via.placeholder.com/150?text=Dress",
+          "contact": "https://wa.me/2349112425685"
+        }
+      ]
+    },
+    {
+      "name": "KV Super Short",
+      "location": "Sapele",
+      "id": "clothes",
+      "products": [
+        {
+          "name": "Shorts",
+          "price": "₦2,500",
+          "image": "https://via.placeholder.com/150?text=Shorts",
+          "contact": "https://wa.me/2348032811441"
+        },
+        {
+          "name": "Jeans",
+          "price": "₦6,500",
+          "image": "https://via.placeholder.com/150?text=Jeans",
+          "contact": "https://wa.me/2348032811441"
+        }
+      ]
+    },
+    {
+      "name": "Chuks Electronics",
+      "location": "Sapele",
+      "id": "phones",
+      "products": [
+        {
+          "name": "Tablet",
+          "price": "₦45,000",
+          "image": "https://via.placeholder.com/150?text=Tablet",
+          "contact": "https://wa.me/2348012345678"
+        },
+        {
+          "name": "Power Bank",
+          "price": "₦5,000",
+          "image": "https://via.placeholder.com/150?text=Power+Bank",
+          "contact": "https://wa.me/2348012345678"
+        }
+      ]
+    },
+    {
+      "name": "Lola Fashion Hub",
+      "location": "Sapele",
+      "id": "clothes",
+      "products": [
+        {
+          "name": "Skirt",
+          "price": "₦4,000",
+          "image": "https://via.placeholder.com/150?text=Skirt",
+          "contact": "https://wa.me/2348098765432"
+        },
+        {
+          "name": "Blouse",
+          "price": "₦3,500",
+          "image": "https://via.placeholder.com/150?text=Blouse",
+          "contact": "https://wa.me/2348098765432"
         }
       ]
     }
