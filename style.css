@@ -226,3 +226,31 @@ footer {
 .carousel-item a:hover {
   background: #ff9800;
   }
+
+/* Fade-in animation for sections */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button hover pop */
+button, .product a, .carousel-item a, .category a {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover, .product a:hover, .carousel-item a:hover, .category a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Highlight category on hover */
+.category:hover {
+  background: #fff0e5;
+  border-radius: 10px;
+}
