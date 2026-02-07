@@ -162,6 +162,22 @@ by<!DOCTYPE html>
   <span class="close" onclick="closeImage()">&times;</span>
   <img class="modal-content" id="modalImg">
   </div>
+  <div id="storeForm" class="modal">
+  <span class="close" onclick="closeForm()">&times;</span>
+
+  <form class="form-box" onsubmit="submitStore(event)">
+    <h2>Add Your Store</h2>
+    <input type="text" placeholder="Store Name" required>
+    <select required>
+      <option value="">What do you sell?</option>
+      <option>Phones</option>
+      <option>Clothes</option>
+    </select>
+    <input type="tel" placeholder="Contact Number" required>
+
+    <button type="submit">Submit</button>
+  </form>
+  </div>
 </body>
   <script>
   function openImage(src) {
@@ -215,24 +231,8 @@ function submitStore(e) {
   closeForm();
 }
 </script>
-  <div id="storeForm" class="modal">
-  <span class="close" onclick="closeForm()">&times;</span>
-
-  <form class="form-box" onsubmit="submitStore(event)">
-    <h2>Add Your Store</h2>
-
-    <input type="text" placeholder="Store Name" required>
-    <select required>
-      <option value="">What do you sell?</option>
-      <option>Phones</option>
-      <option>Clothes</option>
-    </select>
-    <input type="tel" placeholder="Contact Number" required>
-
-    <button type="submit">Submit</button>
-  </form>
-  </div>
 </html>
+
 
 
 
