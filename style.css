@@ -262,3 +262,9 @@ button:hover, .product a:hover, .carousel-item a:hover, .category a:hover {
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
+
+/* Make store sections visible */
+.store {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
