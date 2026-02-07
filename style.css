@@ -268,3 +268,20 @@ button:hover, .product a:hover, .carousel-item a:hover, .category a:hover {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
+
+button {
+  padding: 10px 18px;
+  margin: 5px;
+  border: none;
+  border-radius: 20px;
+  background: #ff5722;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+  background: #ff9800;
+  transform: scale(1.05);
+}
