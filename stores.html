@@ -129,8 +129,22 @@ by<!DOCTYPE html>
     });
   });
 </script>
+  <script>
+  function filterStores(category) {
+    const stores = document.querySelectorAll(".store");
+
+    stores.forEach(store => {
+      if (category === "all") {
+        store.style.display = "block";
+      } else {
+        store.style.display = store.id === category ? "block" : "none";
+      }
+    });
+  }
+  </script>
 </body>
 </html>
+
 
 
 
