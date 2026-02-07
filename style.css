@@ -420,3 +420,19 @@ button:hover {
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
+
+#cakes { background: #ffe6f0; }
+#jewelry { background: #e6f0ff; }
+#books { background: #fff0e6; }
+#appliances { background: #e6ffe6; }
+/* Extra spacing for products */
+.store .product {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* increase gap */
+}
+
+/* Optional: make store boxes slightly wider */
+.store {
+  max-width: 95%; /* takes more horizontal space */
+}
