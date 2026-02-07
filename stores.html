@@ -37,6 +37,9 @@ by<!DOCTYPE html>
   <button onclick="filterStores('phones')">Phones</button>
   <button onclick="filterStores('clothes')">Clothes</button>
   </div>
+  <div style="text-align:center; margin: 20px;">
+  <button onclick="openForm()">➕ Add Your Store</button>
+  </div>
 <!-- PHONES STORES -->
 <section class="store" id="phones">
   <h2>📱 Patrick's Phone Hub</h2>
@@ -157,7 +160,40 @@ by<!DOCTYPE html>
     document.getElementById("imageModal").style.display = "none";
   }
   </script>
+  <script>
+  function openForm() {
+    document.getElementById("storeForm").style.display = "block";
+  }
+
+  function closeForm() {
+    document.getElementById("storeForm").style.display = "none";
+  }
+
+  function submitStore(e) {
+    e.preventDefault();
+    alert("Thank you! Your store request has been received.");
+    closeForm();
+  }
+  </script>
+  <div id="storeForm" class="modal">
+  <span class="close" onclick="closeForm()">&times;</span>
+
+  <form class="form-box" onsubmit="submitStore(event)">
+    <h2>Add Your Store</h2>
+
+    <input type="text" placeholder="Store Name" required>
+    <select required>
+      <option value="">What do you sell?</option>
+      <option>Phones</option>
+      <option>Clothes</option>
+    </select>
+    <input type="tel" placeholder="Contact Number" required>
+
+    <button type="submit">Submit</button>
+  </form>
+  </div>
 </html>
+
 
 
 
