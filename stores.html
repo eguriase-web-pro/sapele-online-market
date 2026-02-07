@@ -1,243 +1,345 @@
-by<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sapele Online Market – Stores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sapele Online Market - SOM</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* GENERAL STYLES */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff5722;
+      margin: 20px 0;
+    }
+
+    /* SEARCH BAR */
+    #searchBar {
+      display: block;
+      width: 90%;
+      max-width: 400px;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    /* FILTER BUTTONS */
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
+      padding: 10px 18px;
+      margin: 5px;
+      border: none;
+      border-radius: 20px;
+      background: #ff5722;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .filter-buttons button:hover {
+      background: #ff9800;
+      transform: scale(1.05);
+    }
+
+    /* STORES CONTAINER */
+    #storesContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px;
+      width: 100%;
+    }
+
+    /* STORE BOX */
+    .store {
+      max-width: 100%;
+      background: #fff8e1;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .store h2 {
+      color: #ff5722;
+      margin-bottom: 8px;
+    }
+
+    .store p {
+      color: #555;
+      margin: 5px 0;
+    }
+
+    /* PRODUCTS HORIZONTAL */
+    .store .product {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .store .product img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .store .product img:hover {
+      transform: scale(1.05);
+    }
+
+    .store .product h3 {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .store .product p {
+      font-size: 13px;
+      color: #777;
+    }
+
+    .store .product a {
+      display: inline-block;
+      margin-top: 5px;
+      background: #ff9800;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .store .product a:hover {
+      background: #ffc107;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Sapele Online Market (SOM)</h1>
-  <p>Shop from trusted sellers in Sapele</p>
-</header>
+<h1>Sapele Online Market (SOM)</h1>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="stores.html">Stores</a>
-</nav>
-<div style="text-align:center; margin:20px;">
-  <input 
-    type="text" 
-    id="searchInput" 
-    placeholder="Search stores or products..." 
-    style="
-      padding:12px;
-      width:80%;
-      max-width:400px;
-      border-radius:25px;
-      border:2px solid #ff5722;
-      outline:none;
-      font-size:16px;
-    "
-  >
-</div>
-  <div style="text-align:center; margin-bottom:20px;">
+<!-- SEARCH BAR -->
+<input type="text" id="searchBar" placeholder="Search for stores..." onkeyup="searchStores()">
+
+<!-- FILTER BUTTONS -->
+<div class="filter-buttons">
   <button onclick="filterStores('all')">All</button>
   <button onclick="filterStores('phones')">Phones</button>
   <button onclick="filterStores('clothes')">Clothes</button>
-  </div>
-  <div style="text-align:center; margin: 20px;">
-  <button onclick="openForm()">➕ Add Your Store</button>
-  </div>
-<!-- PHONES STORES -->
+  <button onclick="filterStores('cakes')">Cakes</button>
+  <button onclick="filterStores('jewelry')">Jewelry</button>
+  <button onclick="filterStores('books')">Books</button>
+  <button onclick="filterStores('appliances')">Home Appliances</button>
+</div>
+
+<!-- STORES CONTAINER -->
 <div id="storesContainer">
+
+  <!-- PHONE STORE -->
   <section class="store" id="phones">
-  <h2>📱 Patrick's Phone Hub</h2>
-  <p>Contact: 08065308410</p>
-
-  <div class="product">
-    <img src="phone.jpg" class="product-img" onclick="openImage(this.src)">
-    <h3>Android Phone</h3>
-    <p>₦60,000</p>
-    <a href="https://wa.me/2348065308410">Contact Seller</a>
-  </div>
-
-  <div class="product">
-    <img src="https://via.placeholder.com/150?text=Headphones">
-    <h3>Headphones</h3>
-    <p>₦12,000</p>
-    <a href="https://wa.me/2348065308410">Contact Seller</a>
-  </div>
-</section>
-  <section class="store" id="phones">
-  <h2>Richard's Phone Hub</h2>
-  <p>Contact: 08065308410</p>
-
-  <div class="product">
-    <img src="https://via.placeholder.com/150?text=Smartphone">
-    <h3>iPhone 16 pro max</h3>
-    <p>₦1,300,000</p>
-    <a href="https://wa.me/2348065308410">Contact Seller</a>
-  </div>
+    <h2>Patrick's Phone Hub</h2>
+    <p>Contact: 08065308410</p>
+    <div class="product">
+      <div>
+        <img src="https://via.placeholder.com/150?text=Android+Phone">
+        <h3>Android Phone</h3>
+        <p>₦60,000</p>
+        <a href="https://wa.me/2348065308410">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=iPhone">
+        <h3>iPhone 12</h3>
+        <p>₦250,000</p>
+        <a href="https://wa.me/2348065308410">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=Phone+Case">
+        <h3>Phone Case</h3>
+        <p>₦2,500</p>
+        <a href="https://wa.me/2348065308410">Contact Seller</a>
+      </div>
+    </div>
   </section>
 
-<section class="store" id="phones">
-  <h2>📱 Chuks Electronics</h2>
-  <p>Contact: 08012345678</p>
-
-  <div class="product">
-    <img src="https://via.placeholder.com/150?text=Tablet">
-    <h3>Tablet</h3>
-    <p>₦45,000</p>
-    <a href="https://wa.me/2348012345678">Contact Seller</a>
-  </div>
-</section>
-
-<!-- CLOTHES STORES -->
+  <!-- CLOTHING STORE -->
   <section class="store" id="clothes">
-  <h2>👕 Tom's Trending Closet</h2>
-  <p>Contact: 09112425685</p>
+    <h2>Tom's Trending Closet</h2>
+    <p>Contact: 09112425685</p>
+    <div class="product">
+      <div>
+        <img src="https://via.placeholder.com/150?text=Shirt">
+        <h3>Men's Shirt</h3>
+        <p>₦5,000</p>
+        <a href="https://wa.me/2349112425685">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=Dress">
+        <h3>Women's Dress</h3>
+        <p>₦7,500</p>
+        <a href="https://wa.me/2349112425685">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=Jacket">
+        <h3>Leather Jacket</h3>
+        <p>₦15,000</p>
+        <a href="https://wa.me/2349112425685">Contact Seller</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="product">
-    <img src="https://via.placeholder.com/150?text=T-shirt">
-    <h3>T-Shirt</h3>
-    <p>₦3,500</p>
-    <a href="https://wa.me/2349112425685">Contact Seller</a>
-  </div>
+  <!-- CAKE SHOP -->
+  <section class="store" id="cakes">
+    <h2>Sweet Treats Bakery</h2>
+    <p>Contact: 08011223344</p>
+    <div class="product">
+      <div>
+        <img src="https://via.placeholder.com/150?text=Chocolate+Cake">
+        <h3>Chocolate Cake</h3>
+        <p>₦12,000</p>
+        <a href="https://wa.me/2348011223344">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=Cheesecake">
+        <h3>Cheesecake</h3>
+        <p>₦15,000</p>
+        <a href="https://wa.me/2348011223344">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=Cupcakes">
+        <h3>Cupcakes</h3>
+        <p>₦1,500</p>
+        <a href="https://wa.me/2348011223344">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=Donuts">
+        <h3>Donuts</h3>
+        <p>₦500</p>
+        <a href="https://wa.me/2348011223344">Contact Seller</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="product">
-    <img src="https://via.placeholder.com/150?text=Dress">
-    <h3>Dress</h3>
-    <p>₦7,000</p>
-    <a href="https://wa.me/2349112425685">Contact Seller</a>
-  </div>
-</section>
+  <!-- JEWELRY SHOP -->
+  <section class="store" id="jewelry">
+    <h2>Gold & Gems</h2>
+    <p>Contact: 08099887766</p>
+    <div class="product">
+      <div>
+        <img src="https://via.placeholder.com/150?text=Gold+Ring">
+        <h3>Gold Ring</h3>
+        <p>₦50,000</p>
+        <a href="https://wa.me/2348099887766">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=Necklace">
+        <h3>Diamond Necklace</h3>
+        <p>₦120,000</p>
+        <a href="https://wa.me/2348099887766">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=Earrings">
+        <h3>Earrings</h3>
+        <p>₦20,000</p>
+        <a href="https://wa.me/2348099887766">Contact Seller</a>
+      </div>
+    </div>
+  </section>
 
-<section class="store" id="clothes">
-  <h2>👖 KV Super Short</h2>
-  <p>Contact: 08032811441</p>
+  <!-- BOOK SHOP -->
+  <section class="store" id="books">
+    <h2>Knowledge Hub</h2>
+    <p>Contact: 08066778899</p>
+    <div class="product">
+      <div>
+        <img src="https://via.placeholder.com/150?text=Novel">
+        <h3>Fiction Novel</h3>
+        <p>₦2,500</p>
+        <a href="https://wa.me/2348066778899">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=Textbook">
+        <h3>Math Textbook</h3>
+        <p>₦5,000</p>
+        <a href="https://wa.me/2348066778899">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=Storybook">
+        <h3>Children's Storybook</h3>
+        <p>₦1,000</p>
+        <a href="https://wa.me/2348066778899">Contact Seller</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="product">
-    <img src="https://via.placeholder.com/150?text=Shorts">
-    <h3>Shorts</h3>
-    <p>₦2,500</p>
-    <a href="https://wa.me/2348032811441">Contact Seller</a>
-  </div>
-</section>
+  <!-- HOME APPLIANCES -->
+  <section class="store" id="appliances">
+    <h2>Home Essentials</h2>
+    <p>Contact: 08044556677</p>
+    <div class="product">
+      <div>
+        <img src="https://via.placeholder.com/150?text=Blender">
+        <h3>Blender</h3>
+        <p>₦8,000</p>
+        <a href="https://wa.me/2348044556677">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=Microwave">
+        <h3>Microwave</h3>
+        <p>₦25,000</p>
+        <a href="https://wa.me/2348044556677">Contact Seller</a>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/150?text=Kettle">
+        <h3>Electric Kettle</h3>
+        <p>₦5,000</p>
+        <a href="https://wa.me/2348044556677">Contact Seller</a>
+      </div>
+    </div>
+  </section>
 
-<section class="store" id="clothes">
-  <h2>👗 Lola Fashion Hub</h2>
-  <p>Contact: 08098765432</p>
-
-  <div class="product">
-    <img src="https://via.placeholder.com/150?text=Blouse">
-    <h3>Blouse</h3>
-    <p>₦3,500</p>
-    <a href="https://wa.me/2348098765432">Contact Seller</a>
-  </div>
-</section>
 </div>
-  
-<footer>
-  <p>© 2026 Sapele Online Market</p>
-</footer>
+
+<!-- JS FOR SEARCH & FILTER -->
 <script>
-  const searchInput = document.getElementById("searchInput");
-
-  searchInput.addEventListener("keyup", function () {
-    const value = searchInput.value.toLowerCase();
-    const stores = document.querySelectorAll(".store");
-
+  function searchStores() {
+    let input = document.getElementById('searchBar').value.toLowerCase();
+    let stores = document.querySelectorAll('.store');
     stores.forEach(store => {
-      const text = store.innerText.toLowerCase();
-      store.style.display = text.includes(value) ? "block" : "none";
+      let name = store.querySelector('h2').innerText.toLowerCase();
+      store.style.display = name.includes(input) ? 'block' : 'none';
     });
-  });
-</script>
-  <script>
-  function filterStores(category) {
-    const stores = document.querySelectorAll(".store");
+  }
 
+  function filterStores(category) {
+    let stores = document.querySelectorAll('.store');
     stores.forEach(store => {
-      if (category === "all") {
-        store.style.display = "block";
+      if (category === 'all') {
+        store.style.display = 'block';
       } else {
-        store.style.display = store.id === category ? "block" : "none";
+        store.style.display = store.id === category ? 'block' : 'none';
       }
     });
   }
-  </script>
-  <div id="imageModal" class="modal">
-  <span class="close" onclick="closeImage()">&times;</span>
-  <img class="modal-content" id="modalImg">
-  </div>
-  <div id="storeForm" class="modal">
-  <span class="close" onclick="closeForm()">&times;</span>
-
-  <form class="form-box" onsubmit="submitStore(event)">
-    <h2>Add Your Store</h2>
-    <input type="text" placeholder="Store Name" required>
-    <select required>
-      <option value="">What do you sell?</option>
-      <option>Phones</option>
-      <option>Clothes</option>
-    </select>
-    <input type="tel" placeholder="Contact Number" required>
-
-    <button type="submit">Submit</button>
-  </form>
-  </div>
-</body>
-  <script>
-  function openImage(src) {
-    document.getElementById("imageModal").style.display = "block";
-    document.getElementById("modalImg").src = src;
-  }
-
-  function closeImage() {
-    document.getElementById("imageModal").style.display = "none";
-  }
-  </script>
-  <script>
-  function openForm() {
-    document.getElementById("storeForm").style.display = "block";
-  }
-
-  function closeForm() {
-    document.getElementById("storeForm").style.display = "none";
-  }
-
-  <script>
-function submitStore(e) {
-  e.preventDefault();
-
-  const form = e.target;
-  const name = form.querySelector("input[type='text']").value;
-  const category = form.querySelector("select").value;
-  const phone = form.querySelector("input[type='tel']").value;
-
-  // Create the store section
-  const storeSection = document.createElement("section");
-  storeSection.className = "store";
-  storeSection.id = category.toLowerCase();
-
-  // Inner HTML same as original stores
-  storeSection.innerHTML = `
-    <h2>${name}</h2>
-    <p>Contact: ${phone}</p>
-
-    <div class="product">
-      <img src="https://via.placeholder.com/150?text=${encodeURIComponent(name)}">
-      <h3>Sample Product</h3>
-      <p>₦0</p>
-      <a href="https://wa.me/${phone.replace(/\D/g,'')}">Contact Seller</a>
-    </div>
-  `;
-
-  document.getElementById("storesContainer").appendChild(storeSection);
-
-  form.reset();
-  closeForm();
-}
 </script>
-</html>
 
-
-
-
-
-
-
-
-
+</body>
+  </html>
