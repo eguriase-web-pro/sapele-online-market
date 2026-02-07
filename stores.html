@@ -41,7 +41,8 @@ by<!DOCTYPE html>
   <button onclick="openForm()">➕ Add Your Store</button>
   </div>
 <!-- PHONES STORES -->
-<section class="store" id="phones">
+<div id="storesContainer">
+  <section class="store" id="phones">
   <h2>📱 Patrick's Phone Hub</h2>
   <p>Contact: 08065308410</p>
 
@@ -73,7 +74,7 @@ by<!DOCTYPE html>
 </section>
 
 <!-- CLOTHES STORES -->
-<section class="store" id="clothes">
+  <section class="store" id="clothes">
   <h2>👕 Tom's Trending Closet</h2>
   <p>Contact: 09112425685</p>
 
@@ -115,7 +116,8 @@ by<!DOCTYPE html>
     <a href="https://wa.me/2348098765432">Contact Seller</a>
   </div>
 </section>
-
+</div>
+  
 <footer>
   <p>© 2026 Sapele Online Market</p>
 </footer>
@@ -171,7 +173,26 @@ by<!DOCTYPE html>
 
   function submitStore(e) {
     e.preventDefault();
-    alert("Thank you! Your store request has been received.");
+
+    const form = e.target;
+    const name = form.querySelector("input[type='text']").value;
+    const category = form.querySelector("select").value;
+    const phone = form.querySelector("input[type='tel']").value;
+
+    const storeDiv = document.createElement("div");
+    storeDiv.className = "store";
+    storeDiv.id = category.toLowerCase();
+
+    storeDiv.innerHTML = `
+      <h3>${name}</h3>
+      <p>Category: ${category}</p>
+      <p>Contact: ${phone}</p>
+      <button>Contact Seller</button>
+    `;
+
+    document.getElementById("storesContainer").appendChild(storeDiv);
+
+    form.reset();
     closeForm();
   }
   </script>
@@ -193,6 +214,7 @@ by<!DOCTYPE html>
   </form>
   </div>
 </html>
+
 
 
 
