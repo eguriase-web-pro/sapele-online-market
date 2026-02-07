@@ -387,3 +387,8 @@ button:hover {
   background: #ffc107;
   transform: scale(1.05);
 }
+
+.store {
+  width: 100%;
+  max-width: 300px; /* controls width of each store box */
+}
