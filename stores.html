@@ -43,7 +43,7 @@ by<!DOCTYPE html>
   <p>Contact: 08065308410</p>
 
   <div class="product">
-    <img src="https://via.placeholder.com/150?text=Smartphone">
+    <img src="phone.jpg" class="product-img" onclick="openImage(this.src)">
     <h3>Android Phone</h3>
     <p>₦60,000</p>
     <a href="https://wa.me/2348065308410">Contact Seller</a>
@@ -142,8 +142,23 @@ by<!DOCTYPE html>
     });
   }
   </script>
+  <div id="imageModal" class="modal">
+  <span class="close" onclick="closeImage()">&times;</span>
+  <img class="modal-content" id="modalImg">
+  </div>
 </body>
+  <script>
+  function openImage(src) {
+    document.getElementById("imageModal").style.display = "block";
+    document.getElementById("modalImg").src = src;
+  }
+
+  function closeImage() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+  </script>
 </html>
+
 
 
 
