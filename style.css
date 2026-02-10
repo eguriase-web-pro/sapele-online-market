@@ -471,3 +471,18 @@ button:hover {
   font-weight: bold;
   color: #0a7cff;
 }
+#checkout-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: #0a7cff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#checkout-btn:hover {
+  background: #055bb5;
+}
