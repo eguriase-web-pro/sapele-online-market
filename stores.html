@@ -454,51 +454,7 @@
       }
     });
   }
-</script
-    
-    // CART ELEMENTS
-const cartIcon = document.getElementById("cart-icon");
-const cartContent = document.getElementById("cart-content");
-const cartItems = document.getElementById("cart-items");
-const totalDisplay = document.getElementById("cart-total");
-const cartCount = document.getElementById("cart-count");
-
-let total = 0;
-let itemCount = 0;
-
-// SHOW/HIDE CART CONTENT WHEN ICON CLICKED
-cartIcon.addEventListener("click", () => {
-  if (cartContent.style.display === "block") {
-    cartContent.style.display = "none";
-  } else {
-    cartContent.style.display = "block";
-  }
-});
-
-// ADD TO CART
-document.querySelectorAll(".add-to-cart").forEach(button => {
-  button.addEventListener("click", () => {
-    const name = button.dataset.name;
-    const price = Number(button.dataset.price);
-
-    // Read quantity
-    const qtyInput = button.previousElementSibling;
-    const quantity = Number(qtyInput.value) || 1;
-
-    const li = document.createElement("li");
-    li.textContent = `${name} x${quantity} — ₦${(price * quantity).toLocaleString()}`;
-    cartItems.appendChild(li);
-
-    total += price * quantity;
-    totalDisplay.textContent = total.toLocaleString();
-
-    itemCount += quantity;
-    cartCount.textContent = itemCount;
-
-    // Reset quantity
-    qtyInput.value = 1;
-  });
-});
+</script>
     <script>
   let total = 0;
   const totalDisplay = document.getElementById("cart-total");
@@ -588,9 +544,57 @@ whatsappBtn.addEventListener("click", () => {
   <p><strong>Total:</strong> ₦<span id="cart-total">0</span></p>
   <button id="checkout-btn">Checkout</button>
 </div>
+  <script>  
+// CART ELEMENTS
+const cartIcon = document.getElementById("cart-icon");
+const cartContent = document.getElementById("cart-content");
+const cartItems = document.getElementById("cart-items");
+const totalDisplay = document.getElementById("cart-total");
+const cartCount = document.getElementById("cart-count");
+const checkoutBtn = document.getElementById("checkout-btn");
 
+let total = 0;
+let itemCount = 0;
+
+// SHOW/HIDE CART CONTENT WHEN ICON CLICKED
+cartIcon.addEventListener("click", () => {
+  cartContent.style.display = cartContent.style.display === "block" ? "none" : "block";
+});
+
+// ADD TO CART
+document.querySelectorAll(".add-to-cart").forEach(button => {
+  button.addEventListener("click", () => {
+    const name = button.dataset.name;
+    const price = Number(button.dataset.price);
+    const seller = button.dataset.seller;
+
+    const qtyInput = button.previousElementSibling;
+    const quantity = Number(qtyInput.value) || 1;
+
+    const li = document.createElement("li");
+    li.innerHTML = `${name} x${quantity} — ₦${(price*quantity).toLocaleString()} 
+                    <br><a href="tel:${seller}">Contact Seller</a>`;
+    cartItems.appendChild(li);
+
+    total += price * quantity;
+    totalDisplay.textContent = total.toLocaleString();
+
+    itemCount += quantity;
+    cartCount.textContent = itemCount;
+
+    // Reset quantity
+    qtyInput.value = 1;
+  });
+});
+
+// CHECKOUT BUTTON (OPTIONAL: just alert total)
+checkoutBtn.addEventListener("click", () => {
+  alert(`Total: ₦${total.toLocaleString()}\nContact sellers to complete purchase.`);
+});
+</script>
 </body>
 </html>
+
 
 
 
