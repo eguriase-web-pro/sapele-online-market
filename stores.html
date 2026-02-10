@@ -141,6 +141,19 @@
   </style>
 </head>
 <body>
+ <!-- CART ICON -->
+<div id="cart-icon">
+  <span id="cart-count">0</span>
+  🛒
+</div>
+
+<!-- CART CONTENT (hidden initially) -->
+<div id="cart-content">
+  <h3>My Cart</h3>
+  <ul id="cart-items"></ul>
+  <p><strong>Total:</strong> ₦<span id="cart-total">0</span></p>
+  <button id="checkout-btn">Checkout</button>
+</div>   
 
 <h1>Sapele Online Market (SOM)</h1>
 
@@ -441,12 +454,51 @@
       }
     });
   }
-</script>
-    <div id="cart">
-  <h3>🛒 Cart</h3>
-  <ul id="cart-items"></ul>
-  <p><strong>Total:</strong> ₦<span id="cart-total">0</span></p>
-    </div>
+</script
+    
+    // CART ELEMENTS
+const cartIcon = document.getElementById("cart-icon");
+const cartContent = document.getElementById("cart-content");
+const cartItems = document.getElementById("cart-items");
+const totalDisplay = document.getElementById("cart-total");
+const cartCount = document.getElementById("cart-count");
+
+let total = 0;
+let itemCount = 0;
+
+// SHOW/HIDE CART CONTENT WHEN ICON CLICKED
+cartIcon.addEventListener("click", () => {
+  if (cartContent.style.display === "block") {
+    cartContent.style.display = "none";
+  } else {
+    cartContent.style.display = "block";
+  }
+});
+
+// ADD TO CART
+document.querySelectorAll(".add-to-cart").forEach(button => {
+  button.addEventListener("click", () => {
+    const name = button.dataset.name;
+    const price = Number(button.dataset.price);
+
+    // Read quantity
+    const qtyInput = button.previousElementSibling;
+    const quantity = Number(qtyInput.value) || 1;
+
+    const li = document.createElement("li");
+    li.textContent = `${name} x${quantity} — ₦${(price * quantity).toLocaleString()}`;
+    cartItems.appendChild(li);
+
+    total += price * quantity;
+    totalDisplay.textContent = total.toLocaleString();
+
+    itemCount += quantity;
+    cartCount.textContent = itemCount;
+
+    // Reset quantity
+    qtyInput.value = 1;
+  });
+});
     <script>
   let total = 0;
   const totalDisplay = document.getElementById("cart-total");
@@ -524,9 +576,22 @@ whatsappBtn.addEventListener("click", () => {
       <button id="whatsapp-btn">Order via WhatsApp</button>
   </div>
 </div>
+    <!-- CART ICON (Top-right) -->
+<div id="cart-icon">
+  <span id="cart-count">0</span> 🛒
+</div>
+
+<!-- CART CONTENT (Hidden initially) -->
+<div id="cart-content">
+  <h3>My Cart 🛒</h3>
+  <ul id="cart-items"></ul>
+  <p><strong>Total:</strong> ₦<span id="cart-total">0</span></p>
+  <button id="checkout-btn">Checkout</button>
+</div>
 
 </body>
 </html>
+
 
 
 
