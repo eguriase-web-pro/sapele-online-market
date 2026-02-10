@@ -436,3 +436,38 @@ button:hover {
 .store {
   max-width: 95%; /* takes more horizontal space */
 }
+/* CART STYLING */
+#cart {
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  width: 280px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  padding: 15px;
+  z-index: 1000;
+}
+
+#cart h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#cart-items li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+#cart-total {
+  font-weight: bold;
+  color: #0a7cff;
+}
