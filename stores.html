@@ -447,9 +447,29 @@
   <ul id="cart-items"></ul>
   <p><strong>Total:</strong> ₦<span id="cart-total">0</span></p>
     </div>
+    <script>
+  let total = 0;
+  const totalDisplay = document.getElementById("cart-total");
+  const cartItems = document.getElementById("cart-items");
+
+  document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", () => {
+      const name = button.dataset.name;
+      const price = Number(button.dataset.price);
+
+      const li = document.createElement("li");
+      li.textContent = name + " — ₦" + price.toLocaleString();
+      cartItems.appendChild(li);
+
+      total += price;
+      totalDisplay.textContent = total.toLocaleString();
+    });
+  });
+    </script>
 
 </body>
 </html>
+
 
 
 
