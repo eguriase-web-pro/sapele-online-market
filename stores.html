@@ -484,9 +484,30 @@ checkoutBtn.addEventListener("click", () => {
   modalTotal.textContent = total.toLocaleString();
   modal.style.display = "block";
 });
+        // Clear the cart after showing modal
+cartItems.innerHTML = "";
+total = 0;
+totalDisplay.textContent = total.toLocaleString();
 
 closeModal.addEventListener("click", () => {
   modal.style.display = "none";
+});
+        const whatsappBtn = document.getElementById("whatsapp-btn");
+
+// Replace with seller's WhatsApp number (include country code, e.g., 234 for Nigeria)
+const sellerNumber = "2348065308410"; 
+
+whatsappBtn.addEventListener("click", () => {
+  let message = "Hello! I want to order the following items:%0A";
+
+  document.querySelectorAll("#modal-items li").forEach(item => {
+    message += "- " + item.textContent + "%0A";
+  });
+
+  message += "Total: ₦" + total.toLocaleString();
+
+  // Open WhatsApp with pre-filled message
+  window.open(`https://wa.me/${sellerNumber}?text=${message}`, "_blank");
 });
     </script>
     <p><strong>Total:</strong> ₦<span id="cart-total">0</span></p>
@@ -500,11 +521,13 @@ closeModal.addEventListener("click", () => {
     <ul id="modal-items"></ul>
 
     <p><strong>Total:</strong> ₦<span id="modal-total">0</span></p>
+      <button id="whatsapp-btn">Order via WhatsApp</button>
   </div>
 </div>
 
 </body>
 </html>
+
 
 
 
