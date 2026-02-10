@@ -465,6 +465,29 @@
       totalDisplay.textContent = total.toLocaleString();
     });
   });
+        // CHECKOUT MODAL LOGIC
+const checkoutBtn = document.getElementById("checkout-btn");
+const modal = document.getElementById("checkout-modal");
+const closeModal = document.getElementById("close-modal");
+const modalItems = document.getElementById("modal-items");
+const modalTotal = document.getElementById("modal-total");
+
+checkoutBtn.addEventListener("click", () => {
+  modalItems.innerHTML = "";
+
+  document.querySelectorAll("#cart-items li").forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item.textContent;
+    modalItems.appendChild(li);
+  });
+
+  modalTotal.textContent = total.toLocaleString();
+  modal.style.display = "block";
+});
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
     </script>
     <p><strong>Total:</strong> ₦<span id="cart-total">0</span></p>
     <button id="checkout-btn">Checkout</button>
@@ -482,6 +505,7 @@
 
 </body>
 </html>
+
 
 
 
